@@ -13,14 +13,17 @@
 </head>
 <body>
     <aside>
-        <img src="{% static 'main/img/instagram.svg' %}" alt="Logo">
-        <span class="logo">Twitter</span>
+        <i class="fas fa-plane fa-4x"></i>
+        <span class="logo">Travel</span>
+        <i class="fas fa-stroopwafel fa-spin fa-3x"></i>
         <h3>Navigation</h3>
         <ul>
-            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Main</li></a>
-            <a href="{% url 'aboutus' %}"><li><i class="fas fa-address-card"></i>About us</li></a>
-            <a href=""><li><i class="fas fa-paper-plane"></i>Contacts</li></a>
-            <a href="{% url 'news_home' %}"><li><i class="fas fa-solid fa-newspaper"></i>News</li></a>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Main</li></a>
+            <a href=""><li><i class="fas fa-plane"></i> Flights</li></a>
+            <a href=""><li><i class="fas fa-train"></i> Trains</li></a>
+            <a href=""><li><i class="fas fa-car"></i> Cars</li></a>
+            <a href="{% url 'aboutus' %}"><li><i class="fas fa-address-card"></i> About us</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fas fa-solid fa-newspaper"></i> News</li></a>
             <a href="{% url 'create' %}"><li><button class="btn btn-info" style="color:#fff"><i class="fas fa-plus-circle" style="color:#fff"></i>Add story</button></li></a>
         </ul>
     </aside>
