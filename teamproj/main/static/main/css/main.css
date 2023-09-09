@@ -1,13 +1,19 @@
 body {
     background: #212529;
+    font-family: 'Raleway', sans-serif;
+    margin:0;
 }
 h1,h2,h3,h4,h5,h6 {
     margin:0;
 }
 
+/* Aside nav
+ ===========================================*/
+
 aside {
     float:left;
     background: #181818;
+    position: fixed;
     width: 20%;
     padding: 2.5%;
     height: 100vh;
@@ -28,7 +34,13 @@ aside .logo {
     position: relative;
     top: -7px;
     border-bottom: 1px solid white;
+    cursor: pointer;
 }
+
+aside .logo:hover{
+    opacity: 0.8;
+}
+
 aside h3 {
     margin-top: 50px;
     font-size: 28px;
@@ -54,26 +66,424 @@ aside ul a {
     text-decoration: none;
 }
 
+
+/* Main
+ ===========================================*/
+
 main .features {
-    float: left;
+    float: right;
     color: #fff;
-    margin-top: 100px;
     text-align: center;
     position: relative;
-    left: 50px;
-    width: 75%;
-    background: url('../img/bg.jpg');
+    height: 300px;
+    width: 80%;
+    background: url(../img/123.jpg);
     background-size: cover;
-}
-
-main .features h1 {
-    font-size: 50px;
 }
 
 main .features p {
     max-width: 400px;
     margin: 20px auto;
 }
+
+main .ft {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 27px;
+}
+.ft h1 {
+    font-weight: 700;
+    font-size: 60px;
+}
+
+/* BUTTONS =
+  ================================================================*/
+
+.button {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    display:inline-block;
+    outline: 2px solid #fff;
+    padding: 8px 16px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+}
+.button:hover{
+    color: #833ab4;
+}
+.button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: width 1s;
+}
+.button:hover::before{
+    width: 150%;
+}
+
+
+
+
+
+
+.regist {
+    float:right;
+    margin-right: 20px;
+    margin-top: 15px;
+    color: #fff;
+    transition: transform .6s ease;
+}
+
+.regist .btn-info {
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    background: #a150a6;
+}
+
+.regist .btn-info:hover {
+    color: #eb5959;
+    transform: scale(1.05);
+    font-weight: 700;
+    background: pink;
+    border: none;
+}
+/*================================================================*/
+
+
+.rec {
+    float: right;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.h_items {
+    float: right;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.content_items.active {
+    float: right;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.hotel_items {
+    width: 25%;
+    border-right: 4px solid #212529;
+    text-align: center;
+    height: 200px;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.items {
+    width: 22%;
+    height: 250px;
+    background-color: #333;
+    margin-right: 3%;
+    border-right: 6px solid #212529;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow .9s ease;
+}
+
+.h_img {
+    width: 100%;
+    position: absolute;
+    min-width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width .7s ease;
+}
+.c_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: .8;
+    margin-bottom: 10px;
+    transition: transform .75s ease;
+}
+
+.img {
+	position: absolute;
+	height: 70%;
+	width:100%;
+	overflow: hidden;
+}
+
+.items:hover .c_img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+.items:hover{
+    box-shadow: 3px 3px 6px;
+
+}
+
+.cars_title {
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+}
+
+.cars_title h5{
+    margin-left: 5px;
+}
+
+.hotel__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(235, 64, 52, 0.6);
+    text-align: center;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.3s linear;
+}
+
+.hotel__title, .hotel__text{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.hotel_items:hover .hotel__content {
+    opacity: 1;
+}
+
+.hotel_items:hover .h_img {
+    width: 108%;
+}
+
+/* TABS
+ ========================================================*/
+
+ .tabs {
+    float: right;
+    width: 60%;
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: center;
+ }
+
+.content_items_2{
+    float: right;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+ }
+
+ .tabs_nav{
+    margin-bottom: 50px;
+    display: flex;
+ }
+
+ .tabs_nav-btn, .car_tabs_nav-btn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 16px;
+    margin-right: 16px;
+    border: 1px solid #dadfe6;
+    border-radius: 2px;
+    color: #0f294d;
+}
+
+.tabs_nav-btn:last-child,.car_tabs_nav-btn:last-child {
+    border-right: none;
+    margin-right: none;
+}
+
+ .tabs_nav-btn.active,.car_tabs_nav-btn.active{
+    background-color: #5e3ddf;
+    color: #fff;
+ }
+
+.tabs_nav-btn:hover,.car_tabs_nav-btn:hover {
+    background-color: #ddd;
+    color: #5e3ddf;
+}
+
+.content_items_2 {
+    display: none;
+}
+
+.content_items{
+    display: none;
+}
+
+.content_items_2.active {
+    display: flex;
+}
+
+.car_tabs {
+    float: right;
+    width: 60%;
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: center;
+}
+
+.car_tabs_nav{
+    margin-bottom: 50px;
+    display: flex;
+}
+
+/* CAR PRICE
+ =========================================================*/
+.price{
+    text-align:left;
+    margin-left: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.from {
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    margin-right: 3px;
+    font-weight: 400;
+}
+.car_price {
+    font-weight: 700;
+    font-size: 18px;
+    color: #3264ff;
+    letter-spacing: 0;
+    text-align: left;
+    line-height: 22px;
+    cursor: pointer;
+}
+.rev {
+    font-size: 13px;
+}
+
+
+/* INFO =
+ ===========================================================*/
+.info {
+    float: right;
+    width: 60%;
+    margin: 0 10%;
+    color: #fff;
+    margin-top: 100px;
+
+}
+
+
+/* Footer =
+ ======================================*/
+ .footer {
+    float:right;
+    width: 80%;
+    background-color: #3a3e64;
+    margin-top: 250px;
+ }
+
+.footer_inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 0 0 0;
+}
+
+.footer_block {
+  width: 33.33333%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.footer__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.footer__address {
+  font-size: 14px;
+  line-height: 1.5;
+  font-style: normal;
+  color: rgba(255,255,255, 0.5);
+}
+
+.icons{
+    margin-top: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.footer ul li {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: transform .6s ease;
+}
+.footer ul li:hover, .footer ul a:hover {
+    color: #eb5959;
+    transform: scale(1.15);
+
+}
+
+.footer ul a {
+    text-decoration: none;
+}
+
+.footer__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+
+
+/* NEWS PAGE
+  =========================================*/
 
 .alert-light{
     float: left;
@@ -89,3 +499,31 @@ form {
     margin-top: 50px;
 }
 
+.form-post {
+    float: right;
+    width: 80%;
+}
+
+
+.ns {
+    float: right;
+    width: 80%;
+    margin-top: 50px;
+}
+
+
+
+/* ABOUT PAGE
+ ====================================*/
+.about {
+    float: right;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+}
+.inner_about {
+    width: 60%;
+    padding-top:80px;
+}
